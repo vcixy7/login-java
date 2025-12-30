@@ -36,14 +36,14 @@ Clone o repositório para a sua máquina local usando o Git:
 
 git clone https://github.com/vcixy7/login-java.git
 cd login-java
-2. Instalar o MySQL
+### 2. Instalar o MySQL
 Se você ainda não tem o MySQL instalado, baixe e instale:
 
 MySQL Community Server
 
 Durante a instalação, anote seu usuário e senha (por padrão, root).
 
-3. Criar o banco de dados e a tabela
+### 3. Criar o banco de dados e a tabela
 Abra o MySQL Workbench ou outro cliente e execute os comandos abaixo para criar o banco e a tabela:
 
 CREATE DATABASE testejava;
@@ -63,7 +63,7 @@ CREATE TABLE usarios (
     log VARCHAR(50)
 );
 
-4. Configurar a conexão no projeto
+### 4. Configurar a conexão no projeto
 No arquivo Conexao.java, ajuste as credenciais do banco de dados:
 
 private static final String url = "jdbc:mysql://localhost:3306/testejava";
@@ -72,7 +72,7 @@ private static final String user = "root"; // **seu usuário**
 
 private static final String password = "root"; // **sua senha**
 
-5. Executar o projeto
+### 5. Executar o projeto
 
 Ainda no terminal:
 
