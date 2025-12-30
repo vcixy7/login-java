@@ -46,8 +46,6 @@ Durante a instalação, anote seu usuário e senha (por padrão, root).
 3. Criar o banco de dados e a tabela
 Abra o MySQL Workbench ou outro cliente e execute os comandos abaixo para criar o banco e a tabela:
 
-sql
-Copiar código
 CREATE DATABASE testejava;
 
 USE testejava;
