@@ -62,14 +62,18 @@ CREATE TABLE usarios (
     
     log VARCHAR(50)
 );
+
 4. Configurar a conexão no projeto
 No arquivo Conexao.java, ajuste as credenciais do banco de dados:
 
 private static final String url = "jdbc:mysql://localhost:3306/testejava";
+
 private static final String user = "root"; // **seu usuário**
+
 private static final String password = "root"; // **sua senha**
 
 5. Executar o projeto
+
 Ainda no terminal:
 
 java -cp .;mysql-connector-j-9.4.0.jar Main
@@ -84,4 +88,3 @@ O programa vai abrir no console, mostrando o menu:
 
 Escolha a opção desejada digitando o número correspondente e siga as instruções.
 
-git clone https://github.com/vcixy7/login-java.git
