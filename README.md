@@ -1,85 +1,90 @@
 # Projeto de Login em Java
 
-Este é um projeto simples de sistema de login desenvolvido em **Java**.  
-O objetivo principal é permitir que usuários se cadastrem, façam login e futuramente possam recuperar a senha.
+Este é um projeto simples de sistema de login desenvolvido em Java utilizando
+MySQL como banco de dados.
+
+O objetivo principal é permitir que usuários se cadastrem e façam login através
+do console, com validação direta no banco de dados.
+
+---
 
 ## Funcionalidades atuais
 
-- Cadastro de usuário com nome, e-mail e senha.  
-- Validação de senha na confirmação do cadastro.  
-- Login de usuário com validação no banco de dados MySQL.  
+- Cadastro de usuário com nome, e-mail e senha
+- Validação da confirmação de senha
+- Login de usuário com validação no MySQL
+- Geração de código aleatório para futura recuperação de senha
 
-> ⚠️ Observação: Atualmente, o projeto é **apenas via console**.  
-> ⚠️ Observação: A funcionalidade de **recuperação de senha ainda não está totalmente implementada**.
+⚠️ Observação: o projeto funciona **apenas via console**  
+⚠️ A recuperação de senha ainda não está totalmente implementada
+
+---
 
 ## Futuras melhorias
 
-- Implementação de **interface gráfica** para facilitar o uso do sistema.  
-- Finalização da recuperação de senha via e-mail.  
-- Melhorias na validação de dados do usuário.
+- Interface gráfica (JavaFX ou Swing)
+- Recuperação de senha via e-mail
+- Criptografia de senha
+- Validação avançada de dados
+
+---
 
 ## Banco de Dados
 
-- O projeto utiliza **MySQL** para armazenar informações dos usuários.  
-- A tabela utilizada é chamada `usarios` e contém as colunas:  
-  - `nome`  
-  - `email`  
-  - `senha`  
-  - `log` (para uso futuro)  
+O projeto utiliza **MySQL**.
 
-## Como rodar
+### Estrutura da tabela
+CREATE DATABASE testejava;
+USE testejava;
 
-Siga os passos abaixo para executar o projeto no seu computador:
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    senha VARCHAR(50) NOT NULL,
+    log VARCHAR(50)
+);
 
-### 1. Clonar o repositório
-Clone o repositório para a sua máquina local usando o Git:
+
+### Como rodar o projeto
+**1️⃣ Clonar o repositório**
 
 git clone https://github.com/vcixy7/login-java.git
 
 cd login-java
-### 2. Instalar o MySQL
-Se você ainda não tem o MySQL instalado, baixe e instale:
 
-MySQL Community Server
 
-Durante a instalação, anote seu usuário e senha (por padrão, root).
+**2️⃣ Baixar o MySQL Connector/J**
 
-### 3. Criar o banco de dados e a tabela
-Abra o MySQL Workbench ou outro cliente e execute os comandos abaixo para criar o banco e a tabela:
+Baixe o driver JDBC:
 
-CREATE DATABASE testejava;
+https://dev.mysql.com/downloads/connector/j/
 
-USE testejava;
+Coloque o arquivo .jar na pasta raiz do projeto.
 
-CREATE TABLE usarios (
 
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    
-    nome VARCHAR(50) NOT NULL,
-    
-    email VARCHAR(100) NOT NULL,
-    
-    senha VARCHAR(50) NOT NULL,
-    
-    log VARCHAR(50)
-);
 
-### 4. Configurar a conexão no projeto
-No arquivo Conexao.java, ajuste as credenciais do banco de dados:
+**3️⃣ Configurar a conexão**
+
+No arquivo Conexao.java, ajuste:
 
 private static final String url = "jdbc:mysql://localhost:3306/testejava";
 
-private static final String user = "root"; // **seu usuário**
+private static final String user = "root"; // seu usuario
 
-private static final String password = "root"; // **sua senha**
+private static final String password = "root"; // sua senha
 
-### 5. Executar o projeto
+**4️⃣ Compilar o projeto**
 
-Ainda no terminal:
+No terminal, dentro da pasta login-java:
 
-java -cp .;mysql-connector-j-9.4.0.jar Main
+javac -cp mysql-connector-j-9.4.0.jar;. src/Main.java src/conexao/*.java src/dao/*.java
 
-O programa vai abrir no console, mostrando o menu:
+**5️⃣ Executar**
+
+java -cp mysql-connector-j-9.4.0.jar;. Main
+
+Menu do sistema
 
 1 - Login
 
@@ -87,5 +92,4 @@ O programa vai abrir no console, mostrando o menu:
 
 3 - Esqueceu a senha?
 
-Escolha a opção desejada digitando o número correspondente e siga as instruções.
-
+Digite a opção desejada e siga as instruções no console.
