@@ -82,20 +82,30 @@ private static final String password = "root"; // sua senha
 
 **4️⃣ Compilar o projeto**
 
-No terminal, dentro da pasta login-java:
-
+```bash
 javac -cp mysql-connector-j-9.4.0.jar;. src/Main.java src/conexao/*.java src/dao/*.java
+```
 
-**5️⃣ Executar**
 
+🔎 Observação importante sobre a execução do projeto
+### ⚠️ Observação sobre a execução
+
+Neste projeto, a classe `Main` está localizada dentro da pasta `src`.
+
+Por isso, o comando de execução **DEPENDE** de onde o arquivo `Main.class` está.
+
+#### ✔ Caso o `Main.class` esteja dentro da pasta `src` (situação atual deste projeto):
+
+```bash
+java -cp mysql-connector-j-9.4.0.jar;src Main
+
+✔ Caso o Main.class esteja na raiz do projeto:
 java -cp mysql-connector-j-9.4.0.jar;. Main
 
 Menu do sistema
-
 1 - Login
-
 2 - Cadastrar
-
 3 - Esqueceu a senha?
+
 
 Digite a opção desejada e siga as instruções no console.
