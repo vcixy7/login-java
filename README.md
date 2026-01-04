@@ -35,6 +35,7 @@ Siga os passos abaixo para executar o projeto no seu computador:
 Clone o repositório para a sua máquina local usando o Git:
 
 git clone https://github.com/vcixy7/login-java.git
+
 cd login-java
 ### 2. Instalar o MySQL
 Se você ainda não tem o MySQL instalado, baixe e instale:
